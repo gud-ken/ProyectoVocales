@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body{
+    background: rgb(41, 88, 148);
+    font-family: "Outfit", serif;
+    color: rgb(200, 213, 221);
+}
+
+.header_div{
+    background: white;
+    font-family: "Lexend", serif;
+    color: rgb(0, 57, 131);
+}
+
+.main_div button{
+    font-family: Arial, Helvetica, sans-serif;
+    margin-top: 30px;
+    width: 130px;
+    font-weight: bolder;
+    letter-spacing: 3px;
+}
+
+.copy_rigth_footer{
+    position: fixed;
+    color: rgb(184, 184, 184);
+    bottom: 0;
+    width: 100%;
+    font-size: 18px;
+    background-color: rgb(19, 30, 92);
+    line-height: 3;
+    text-align: center;
+    text-shadow: 5px 5px 5px rgba(84, 89, 97, 0.801);
+}
+
+.contenedor{
+    margin: 0 5%;
+    padding: 0 2%;
+    width: 90%;
+    text-align: center;
+    overflow: hidden;
+  }
+
+.botones-letras{
+    overflow: hidden;
+  }
+
+  .botones-letras ul{
+    width: auto;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: left;
+    justify-content: left;
+    align-items: center;
+    overflow: scroll;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+  }
+  
+  ::-webkit-scrollbar{
+    width: 8px;
+    background: #2980B9;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    border-radius: 20px;
+    }
+
+  .botones-letras li{
+    display: inline-block;
+    text-align: center;
+    margin-left: var(--espacios);
+    margin-bottom: var(--espacios-contenido);
+    padding: 6px 12px;
+    border: 1px solid var(--color1);
+    list-style: none;
+    color: var(--color1);
+  }
+  
+  .botones-letras li:hover{
+    background: var(--color1);
+    color:#fff;
+    cursor: pointer;
+  }
+  
+  .botones-letras .active{
+    background: var(--color1);
+    color:#fff;
+  }
+  
+  .galeria-letras{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .cont-letras{
+    width: 31%;
+    box-shadow: 0 0 6px 0 rgba(0,0,0,.5);
+    height:300px;
+    overflow: hidden;
+    margin-bottom: 45px;
+  }
+  
+  .img-letras{
+    height: 90%;
+    width: 100%;
+  }
+  
+  .img-letras img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  
+  .textos-letras{
+    height: 10%;
+  }
+  
+  .textos-letras h4{
+    line-height: 30px;
+    font-weight: 300;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }

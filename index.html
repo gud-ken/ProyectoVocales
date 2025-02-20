@@ -1,0 +1,379 @@
+
+<html>
+  <head>
+    <title>Aplicación de identificación de sonido</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/ml5@0.4.3/dist/ml5.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Madimi+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <div class="col-xs-12 header_div text-center">
+      <h2>Mounstros controlados por sonido</h2>
+      <p>Instrucciones: realiza diferentes sonidos como Aplausos, Silbido, Ring, Alarma,
+         para hacer bailar a los aliens </p>
+    </div>
+    <div class="main_div">
+      <center>
+        <br>
+        <button class="btn btn-warning" onclick="starClasification()"> ESCUCHAR</button>
+        <h3 id="result_label">Escucho: </h3>
+        <h4 id="result_confidence">Precisión: </h4>
+        <br>
+      </center>
+          <section class="letras contenedor" id="trabajo">
+            <h3>Selecciona la vocal y aprende</h3>
+            <p class="after">Sílabas en español</p>
+            <div class="botones-letras">
+                <ul>
+                    <li class="filter " data-nombre='A'><img src="Letter-A.jpg" id="Let-A" width="300" height="300"></li>
+                    <li class="filter" data-nombre='E'><img src="Letter-E.jpg" id="Let-E" width="300" height="300"></li>
+                    <li class="filter" data-nombre='I'><img src="Letter-I.jpg" id="Let-I" width="300" height="300"></li>
+                    <li class="filter" data-nombre='O'><img src="Letter-O.jpg" id="Let-O" width="300" height="300"></li>
+                    <li class="filter" data-nombre='U'><img src="Letter-U.jpg" id="Let-U" width="300" height="300"></li>
+                </ul>
+            </div>
+            <div class="galeria-letras">
+                <div class="cont-letras A">
+                    <div class="img-letras">
+                        <img src="boy1.jpg" id="ba" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>ba</h4>
+                    </div>
+                </div>
+                <div class="cont-letras E">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" id="be" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>be</h4>
+                    </div>
+                </div>
+                <div class="cont-letras I">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" id="bi" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>bi</h4>
+                    </div>
+                </div>
+                <div class="cont-letras O">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" id="bo" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>bo</h4>
+                    </div>
+                </div>
+                <div class="cont-letras U">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" id="bu" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>bu</h4>
+                    </div>
+                </div>
+                <div class="cont-letras A">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" id="da" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>da</h4>
+                    </div>
+                </div>
+                <div class="cont-letras E">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" id="de" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>de</h4>
+                    </div>
+                </div>
+                <div class="cont-letras I">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" id="di" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>di</h4>
+                    </div>
+                </div>
+                <div class="cont-letras O">
+                    <div class="img-letras">
+                      <img src="boy1.jpg"  id="do" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>do</h4>
+                    </div>
+                </div>
+                <div class="cont-letras U">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" id="du" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>du</h4>
+                    </div>
+                </div>
+                <div class="cont-letras A">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" id="ga" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>ga</h4>
+                    </div>
+                </div>
+                <div class="cont-letras E">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" id="ge" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>ge</h4>
+                    </div>
+                </div>
+                <div class="cont-letras I">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>gi</h4>
+                    </div>
+                </div>
+                <div class="cont-letras O">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>go</h4>
+                    </div>
+                </div>
+                <div class="cont-letras U">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>gu</h4>
+                    </div>
+                </div>
+                <div class="cont-letras A">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>la</h4>
+                    </div>
+                </div>
+                <div class="cont-letras E">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>le</h4>
+                    </div>
+                </div>
+                <div class="cont-letras I">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>li</h4>
+                    </div>
+                </div>
+                <div class="cont-letras O">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>lo</h4>
+                    </div>
+                </div>
+                <div class="cont-letras U">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>lu</h4>
+                    </div>
+                </div>
+                <div class="cont-letras A">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>ma</h4>
+                    </div>
+                </div>
+                <div class="cont-letras E">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>me</h4>
+                    </div>
+                </div>
+                <div class="cont-letras I">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>mi</h4>
+                    </div>
+                </div>
+                <div class="cont-letras O">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>mo</h4>
+                    </div>
+                </div>
+                <div class="cont-letras U">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>mu</h4>
+                    </div>
+                </div>
+                <div class="cont-letras A">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>pa</h4>
+                    </div>
+                </div>
+                <div class="cont-letras E">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>pe</h4>
+                    </div>
+                </div>
+                <div class="cont-letras I">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>pi</h4>
+                    </div>
+                </div>
+                <div class="cont-letras O">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>po</h4>
+                    </div>
+                </div>
+                <div class="cont-letras U">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>pu</h4>
+                    </div>
+                </div>
+                <div class="cont-letras A">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>sa</h4>
+                    </div>
+                </div>
+                <div class="cont-letras E">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>se</h4>
+                    </div>
+                </div>
+                <div class="cont-letras I">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>si</h4>
+                    </div>
+                </div>
+                <div class="cont-letras O">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>so</h4>
+                    </div>
+                </div>
+                <div class="cont-letras U">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>su</h4>
+                    </div>
+                </div>
+                <div class="cont-letras A">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>ta</h4>
+                    </div>
+                </div>
+                <div class="cont-letras E">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>te</h4>
+                    </div>
+                </div>
+                <div class="cont-letras I">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>ti</h4>
+                    </div>
+                </div>
+                <div class="cont-letras O">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>to</h4>
+                    </div>
+                </div>
+                <div class="cont-letras U">
+                    <div class="img-letras">
+                      <img src="boy1.jpg" alt="">
+                    </div>
+                    <div class="textos-letras">
+                        <h4>tu</h4>
+                    </div>
+                </div>    
+        
+            </div>
+        </section>
+        </section>
+    </div>
+    <div class="copy_rigth_footer">
+      Desarrollado por G-Aplication
+    </div>
+<script src="main2.js"></script>
+<script src="filtro.js"></script>
+  </body>
+</html>
